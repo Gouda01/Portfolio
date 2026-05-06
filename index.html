@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Mohamed Gouda - Data Scientist & Financial Analyst | Portfolio</title>
+    <!-- Google Fonts + Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f9fafb;
+            color: #111827;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1480px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #c084fc, #60a5fa);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover {
+            color: #60a5fa;
+            border-bottom: 2px solid #60a5fa;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 5rem 0 4rem;
+            background: linear-gradient(to bottom, #f1f5f9, #ffffff);
+        }
+
+        .hero-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #0f172a, #3b82f6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-text .badge {
+            display: inline-block;
+            background: #1e293b;
+            color: #facc15;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            font-size: 0.85rem;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: #334155;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 40px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px -5px #2563eb80;
+        }
+
+        .btn-outline {
+            border: 2px solid #2563eb;
+            color: #2563eb;
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: #2563eb;
+            color: white;
+        }
+
+        /* Professional Profile Picture Section */
+        .hero-image {
+            flex: 0.8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-frame {
+            background: white;
+            padding: 0.8rem;
+            border-radius: 2rem;
+            box-shadow: 0 25px 40px -12px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-frame:hover {
+            transform: translateY(-8px);
+        }
+
+        .profile-pic {
+            width: 280px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 1.5rem;
+            display: block;
+            transition: all 0.3s;
+            border: 3px solid white;
+            box-shadow: 0 10px 20px -5px rgba(0,0,0,0.1);
+        }
+
+        /* Alternative circular style - remove comment if you prefer circle */
+        /* 
+        .profile-pic { border-radius: 50%; width: 260px; height: 260px; } 
+        .profile-frame { border-radius: 50%; padding: 0.5rem; }
+        */
+
+        .hero-stats {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 2rem;
+            box-shadow: 0 20px 35px -10px rgba(0,0,0,0.1);
+            text-align: center;
+            min-width: 220px;
+        }
+
+        .years-card {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #2563eb;
+        }
+
+        /* Combined flex for hero */
+        .hero-main {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        /* Sections */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #2563eb, #c084fc);
+            margin: 0.8rem auto 0;
+            border-radius: 4px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-cat {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 1.8rem;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            border: 1px solid #e2e8f0;
+        }
+
+        .skill-cat:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -12px rgba(0,0,0,0.1);
+        }
+
+        .skill-cat h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #0f172a;
+        }
+
+        .skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill-tag {
+            background: #eef2ff;
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            color: #1e40af;
+        }
+
+        /* Expert Highlight */
+        .expert-card {
+            background: linear-gradient(145deg, #0f172a, #1e293b);
+            color: white;
+            border-radius: 2rem;
+            padding: 2.5rem;
+            margin: 2rem 0;
+            text-align: center;
+            box-shadow: 0 25px 40px -12px #0f172a80;
+        }
+
+        .expert-card h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .expert-card span {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #facc15;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-item {
+            background: white;
+            padding: 1.8rem;
+            border-radius: 1.5rem;
+            text-align: center;
+            transition: 0.2s;
+            border: 1px solid #e2e8f0;
+        }
+
+        .service-item i {
+            font-size: 2.5rem;
+            color: #2563eb;
+            margin-bottom: 1rem;
+        }
+
+        .exp-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+        }
+        .exp-item {
+            background: white;
+            padding: 1.2rem 1.8rem;
+            border-radius: 1rem;
+            border-left: 6px solid #2563eb;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+
+        .contact {
+            background: #eef2ff;
+            border-radius: 2rem;
+            padding: 2.5rem;
+            text-align: center;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .social-links a {
+            color: #1e293b;
+            font-size: 1.8rem;
+            transition: 0.2s;
+        }
+        .social-links a:hover { color: #2563eb; transform: scale(1.1);}
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-text h1 { font-size: 2rem;}
+            .nav-links { gap: 1rem; margin-top: 0.5rem;}
+            nav { flex-direction: column; gap: 0.8rem;}
+            .profile-pic { width: 220px; height: 220px; }
+            .hero-main { flex-direction: column; text-align: center; }
+            .hero-text p { margin-left: auto; margin-right: auto; }
+            .btn-group { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <div class="logo">GoudaDataStories<span style="color:#60a5fa;">™</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#expertise">Financial Expertise</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section with Profile Picture -->
+    <section id="home" class="hero">
+        <div class="container hero-main">
+            <div class="hero-text">
+                <div class="badge"><i class="fas fa-chart-line"></i> Data & Financial Intelligence</div>
+                <h1>Mohamed Gouda<br> <span style="font-size: 1.8rem;">Data Scientist & Senior Financial Analyst</span></h1>
+                <p>Turning data into strategic decisions using <strong>Python, R, SPSS</strong>. Over two decades of experience in <strong>accounting, financial analysis, and web development</strong> (Laravel, Django, PHP). I bridge the gap between complex data and business growth.</p>
+                <div class="btn-group">
+                    <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Get in touch</a>
+                    <a href="#skills" class="btn btn-outline"><i class="fas fa-code"></i> Explore skills</a>
+                </div>
+            </div>
+            <!-- Professional Profile Picture Section (replace placeholder with your image) -->
+            <div class="hero-image">
+                <div class="profile-frame">
+                    <img class="profile-pic" src="GoudaPic.png" alt="Mohamed Gouda - Professional Headshot">
+                    <!--  TO REPLACE WITH YOUR IMAGE: 
+                          Change the src attribute above to your image path, e.g., "images/my-photo.jpg" 
+                          For best results use a square photo (min 400x400px), neutral background, professional attire.
+                    -->
+                </div>
+                <!-- Optional caption: subtle and professional -->
+                <p style="text-align: center; margin-top: 12px; font-size: 0.8rem; color: #4b5563;">✔ 20+ years transforming finance & data</p>
+            </div>
+            <!-- Stats card as compact elegant info -->
+            <div class="hero-stats">
+                <div class="years-card">20+</div>
+                <p style="font-weight: bold; margin: 0.5rem 0;">Years of Excellence</p>
+                <p style="color:#475569;">Financial Analysis & Accounting</p>
+                <hr style="margin: 1rem 0;">
+                <div><i class="fas fa-database"></i> 50+ successful data projects</div>
+                <div><i class="fas fa-chart-pie"></i> $500M+ analyzed in assets</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Technical & Professional Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-cat">
+                    <h3><i class="fab fa-python"></i> Data Science</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">Python (Pandas, NumPy, Scikit-learn)</span>
+                        <span class="skill-tag">R (Tidyverse, ggplot2, Shiny)</span>
+                        <span class="skill-tag">SPSS (Advanced Statistics)</span>
+                        <span class="skill-tag">SQL | BigQuery</span>
+                        <span class="skill-tag">Tableau | Power BI</span>
+                        <span class="skill-tag">Machine Learning & Forecasting</span>
+                    </div>
+                </div>
+                <div class="skill-cat">
+                    <h3><i class="fas fa-globe"></i> Web Development</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">PHP & Laravel</span>
+                        <span class="skill-tag">Python & Django</span>
+                        <span class="skill-tag">HTML5/CSS3/JavaScript</span>
+                        <span class="skill-tag">RESTful APIs</span>
+                        <span class="skill-tag">MySQL / PostgreSQL</span>
+                        <span class="skill-tag">Docker & Deployment</span>
+                    </div>
+                </div>
+                <div class="skill-cat">
+                    <h3><i class="fas fa-chart-pie"></i> Financial & Accounting</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">Financial Modeling</span>
+                        <span class="skill-tag">Financial Statement Analysis</span>
+                        <span class="skill-tag">Advanced Accounting & Auditing</span>
+                        <span class="skill-tag">Budgeting & Forecasting</span>
+                        <span class="skill-tag">ERP Systems (SAP, Oracle)</span>
+                        <span class="skill-tag">Excel VBA & Power Query</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 20+ Years Financial Expertise Highlight -->
+    <section id="expertise" class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="expert-card">
+                <i class="fas fa-landmark" style="font-size: 3rem; color: #facc15;"></i>
+                <h2>Over 20 Years in Accounting & Financial Analysis</h2>
+                <p style="font-size: 1.2rem; max-width: 800px; margin: 1rem auto;">A distinguished career spanning <span>20+ years</span> in financial accounting, corporate finance, and investment analysis. I have led financial audits, strategic planning, and data-driven transformations for multinational corporations, banks, and high-growth enterprises.</p>
+                <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-top: 1.5rem;">
+                    <div><i class="fas fa-chart-simple"></i> Risk & Liquidity Analysis</div>
+                    <div><i class="fas fa-file-invoice-dollar"></i> IFRS / GAAP Reporting</div>
+                    <div><i class="fas fa-robot"></i> Automated Financial Dashboards</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / What I Offer -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title">What I Deliver</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Financial Analytics Consulting</h3>
+                    <p>Deep dive into financial statements, cash flow analysis, feasibility studies using SPSS, R, and Python.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-brain"></i>
+                    <h3>Advanced Predictive Modeling</h3>
+                    <p>Machine learning models for revenue forecasting, credit risk assessment, and asset valuation.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Custom Web Platforms & Dashboards</h3>
+                    <p>Interactive KPI dashboards, ERP modules, and financial portals built with Laravel, Django, and modern stack.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-chalkboard-user"></i>
+                    <h3>Workshops & Team Training</h3>
+                    <p>Empower your team with data science tools (Python, R, SPSS) and financial best practices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Journey / Experience Timeline -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <h2 class="section-title">Career Highlights & Experience</h2>
+            <div class="exp-list">
+                <div class="exp-item">
+                    <h3><i class="fas fa-briefcase"></i> Lead Financial Data Analyst </h3>
+                    <p>Lead a team of analysts building financial forecasting models using Python and R. Automated monthly reporting, reducing turnaround by 35% and delivering real-time P&L insights to C-level executives.</p>
+                </div>
+                <div class="exp-item">
+                    <h3><i class="fas fa-chart-line"></i> Senior Financial & Audit Consultant </h3>
+                    <p>Audited 30+ companies across banking and industrial sectors. Leveraged SPSS for material variance analysis and implemented ERP solutions (SAP/Oracle). Recognized for excellence in financial controls.</p>
+                </div>
+                <div class="exp-item">
+                    <h3><i class="fas fa-calculator"></i> Head of Accounts & Financial Analysis  </h3>
+                    <p>Managed annual budgeting, credit risk modeling, and financial reporting. Developed custom VBA and SQL solutions to enhance treasury operations. Received "Best Financial Performance Award".</p>
+                </div>
+                <div class="exp-item">
+                    <h3><i class="fas fa-code"></i> Web & Full-Stack Developer (Freelance / Consulting) </h3>
+                    <p>Delivered custom financial portals for SMEs and corporate clients using Laravel & Django, integrating live data APIs and interactive dashboards with real-time financial metrics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications & Highlights -->
+    <div class="container" style="margin-bottom: 2rem;">
+        <div style="background: #ffffff; border-radius: 1.5rem; padding: 2rem; border: 1px solid #cbd5e1;">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; align-items: center;">
+                <div><i class="fas fa-certificate" style="color:#2563eb;"></i> CFA Level III Candidate</div>
+                <div><i class="fas fa-chart-simple"></i> Certified Management Accountant (CMA)</div>
+                <div><i class="fab fa-python"></i> Python Data Science Professional</div>
+                <div><i class="fas fa-database"></i> IBM SPSS Statistics Specialist</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="contact">
+                <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">Let’s Work Together</h2>
+                <p style="margin-bottom: 1.5rem;">Whether you need financial consulting, a custom web-based analytics platform, or data science training — I’m ready to drive your success.</p>
+                <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                    <a href="mailto:Goda61@gmail.com" class="btn btn-primary" target="_blank"><i class="fas fa-envelope"></i> Goda61@gmail.com</a>
+                    <a href="https://www.linkedin.com/in/mohamed-gouda-atalla/" class="btn btn-outline" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://github.com/Gouda01" class="btn btn-outline" target="_blank"><i class="fab fa-github" target="_blank"></i> GitHub</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://wa.me/01144404067" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-upwork" target="_blank"></i></a>
+                </div>
+                <p style="margin-top: 2rem; font-size: 0.85rem;"> <i class="fas fa-phone-alt"></i> +201144404067 (Direct line)</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>© 2025 Ahmed Al-Mansouri — Data Science | Financial Analysis | Web Development (Python, R, SPSS, Laravel, Django). All rights reserved.</p>
+        <p style="margin-top: 10px; font-size: 0.8rem;">20+ years of excellence in accounting, strategic finance, and data-driven insights.</p>
+    </div>
+</footer>
+
+<script>
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const target = document.querySelector(this.getAttribute('href'));
+            if(target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+    console.log("Professional portfolio with profile picture — elegant and trustworthy");
+</script>
+</body>
+</html>
